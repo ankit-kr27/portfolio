@@ -1,7 +1,7 @@
 import { assets, workData } from '@/assets/assets'
 import Image from 'next/image'
 
-const Work = () => {
+const Work = ({ isDarkMode }) => {
     return (
         <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
             <h4 className="text-center mb-2 text-lg font-Ovo">My Portfolio</h4>
@@ -16,7 +16,7 @@ const Work = () => {
                 {workData.map(({ bgImage, description, title }) => (
                     <div
                         key={title}
-                        className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group"
+                        className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group dark:text-black"
                         style={{ backgroundImage: `url(${bgImage})` }}
                     >
                         <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
@@ -39,11 +39,15 @@ const Work = () => {
             </div>
             <a
                 href=""
-                className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full px-10 py-3 mx-auto my-20 hover:bg-lightHover duration-500"
+                className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full px-10 py-3 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
             >
                 Show More{' '}
                 <Image
-                    src={assets.right_arrow_bold}
+                    src={
+                        isDarkMode
+                            ? assets.right_arrow_bold_dark
+                            : assets.right_arrow_bold
+                    }
                     alt="right arrow"
                     className="w-4"
                 />
