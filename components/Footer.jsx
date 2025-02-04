@@ -1,5 +1,5 @@
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
+import { assets } from '@/assets/assets';
+import Image from 'next/image';
 
 const Footer = ({ isDarkMode }) => {
     return (
@@ -46,7 +46,7 @@ const Footer = ({ isDarkMode }) => {
                 </ul>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -1,30 +1,30 @@
-'use client'
+'use client';
 
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { assets } from '@/assets/assets';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const sideMenuRef = useRef(null)
+    const [isScrolled, setIsScrolled] = useState(false);
+    const sideMenuRef = useRef(null);
 
     const openMenu = () => {
-        sideMenuRef.current.style.transform = 'translateX(-16rem)'
-    }
+        sideMenuRef.current.style.transform = 'translateX(-16rem)';
+    };
 
     const closeMenu = () => {
-        sideMenuRef.current.style.transform = 'translateX(16rem)'
-    }
+        sideMenuRef.current.style.transform = 'translateX(16rem)';
+    };
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (scrollY > 50) {
-                setIsScrolled(true)
+                setIsScrolled(true);
             } else {
-                setIsScrolled(false)
+                setIsScrolled(false);
             }
-        })
-    }, [])
+        });
+    }, []);
 
     return (
         <>
@@ -158,7 +158,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 </ul>
             </nav>
         </>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
